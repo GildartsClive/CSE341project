@@ -12,10 +12,36 @@
         <h1>
           <%= title %>
         </h1>
-        <p>This is the placeholder for Team Activity 02</p>
       </div>
     </div>
     <div class="container">
+
+      <div name="add user">
+        <!-- a textbox and button to add a new user to the array of users.-->
+        <form action="/ta02/addUser" method="POST">
+            <label for="newUser">Enter New Users Name</label><br>
+            <input type="text" name="newUser">
+            <button type="submit">Add User</button>
+        </form>
+      </div>
+
+      <div name="remove user">
+        <!-- form for removeing a user from the users array-->
+        <form action="/ta02/removeUser" method="POST">
+            <br><br><label for="removeUser">Enter User Name to remove</label><br>
+            <input type="text" name="removeUser">
+            <button type="submit">Remove User</button>
+        </form>
+      </div>
+
+      <div name="List of users">
+        <!-- make a list of the users in the users array-->
+        <h2>People:</h2>
+        <% for(user of users) { %>
+          <p><%= user %></p>
+        <% } %>
+    </div>
+
 
     </div>
 
